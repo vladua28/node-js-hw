@@ -1,0 +1,20 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore npm-debug.log file
+npm-debug.log
+
+# Ignore built files
+/build
+
+# Ignore log files
+*.log
+
+# Ignore the .idea directory (if you're using WebStorm)
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore yarn error log files
+yarn-error.log
