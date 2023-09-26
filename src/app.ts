@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get(
   "/users",
   async (_req: Request, res: Response): Promise<Response<IUser[]>> => {
-    const users = await User.find;
+    const users = await User.find();
     return res.json({ data: users });
   },
 );
@@ -26,6 +26,5 @@ app.post("/users", async (req, res) => {
 });
 
 app.listen(configs.PORT, async () => {
-  // @ts-ignore
   await mongoose.connect(configs.DB_URL);
 });
