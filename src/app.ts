@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import * as mongoose from "mongoose";
 
 import { configs } from "./configs/configs";
-import { User } from "./models/Users.model";
+import { User } from "./models/user.model";
 import { IUser } from "./types/user.type";
 
 config();
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get(
   "/users",
-  async (_req: Request, res: Response): Promise<Response<IUser[]>> => {
+  async (req: Request, res: Response): Promise<Response<IUser[]>> => {
     const users = await User.find();
     return res.json({ data: users });
   },
